@@ -15,7 +15,7 @@ type TradingChartSettings = {
     charts: any[]; // You might want to replace 'any' with a more specific type if you know the structure of chart objects
 }
 
-export type  CurrencyPair ={
+export type CurrencyPair = {
     id: number;
     name: {
         fa: string;
@@ -30,15 +30,28 @@ export type  CurrencyPair ={
 }
 
 
-export type PriceInfo = {
+export type StatsInfo = {
     open: number,
     close: number,
     highest: number,
     lowest: number,
     baseVolume: number,
-    quoteVolume:number,
+    quoteVolume: number,
     changePercent: number
 }
+export type StatsData = {
+    [key: number]: StatsInfo
+}
+
+type PriceInfo = {
+        "Amount": number,
+        "Checksum": string,
+        "Date": number,
+        "HumanReadableDate": string,
+        "PairId": number,
+        "Price": number,
+        "Type": "sell" | "buy",
+    }
 export type PriceData = {
-    [key:number]: PriceInfo
+    [key: number]: PriceInfo
 }

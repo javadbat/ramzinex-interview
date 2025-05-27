@@ -12,6 +12,7 @@
 
         .header-item {
           border: 1px solid #000;
+          cursor: pointer;
         }
       }
 
@@ -19,7 +20,6 @@
         @apply grid;
         grid-template-columns: subgrid;
         grid-column: span 2;
-        background-color: green;
         grid-auto-rows: max-content;
         align-items: start;
 
