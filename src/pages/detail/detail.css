@@ -1,34 +1,5 @@
 @import "tailwindcss";
 
 @layer components{
-  #Chat{
-    @apply h-dvh w-dvw bg-white;
-    background-image: linear-gradient(45deg, oklch(0.95 0.01 225) 0%, oklch(0.99 0.01 225) 100%);
-    .chat-layout{
-      @apply h-dvh w-dvw grid;
-      grid-template-columns: 1fr 3fr;
-      grid-template-rows: 4rem 1fr max-content;
-      grid-template-areas: "side header" "side history" "side action";
-      .header{
-        @apply p-4;
-        grid-area: header;
-      }
-      .chat-history{
-        @apply p-4;
-        grid-area: history;
-      }
-      .side-bar{
-        @apply p-4;
-        grid-area: side;
-        border-inline-end: 1px solid var(--jb-neutral-7);
-      }
-      .chat-actions{
-        @apply p-4;
-        grid-area: action;
-        --jb-textarea-max-height:10rem;
-        --jb-textarea-min-height:2.5rem
-      }
-    }
-  }
 
 }

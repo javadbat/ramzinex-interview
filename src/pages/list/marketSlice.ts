@@ -102,7 +102,7 @@ export const combinedMarketData = createSelector(
   [(state: RootState) => state.market.pairs, (state: RootState) => state.market.prices],
   (pair, prices) => {
     return pair.map(p =>
-      ({ ...p, price: prices[p.id] || { open: 0, high: 0, low: 0, close: 0 } })
+      ({ ...p, marketInfo: prices[p.id] || { open: 0, high: 0, low: 0, close: 0 } })
     );
   }
 );
@@ -126,7 +126,7 @@ export const selectMarketData = createSelector(
         if (a.name.fa > b.name.fa) return 1;
         return 0;
       }else if(sortBy === "price"){
-        return a.price.open - b.price.open;
+        return a.marketInfo.open - b.marketInfo.open;
       }
       return 0;
     });

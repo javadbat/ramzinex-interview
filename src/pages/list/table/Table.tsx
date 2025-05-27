@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import './table.css';
 import { selectMarketData, setSortBy } from "../marketSlice";
+import { Link } from "react-router";
 export function Table() {
   const marketData = useSelector(selectMarketData);
    const dispatch = useDispatch();
@@ -14,10 +15,10 @@ export function Table() {
         {
           marketData.map((item) => {
             return (
-              <div className='table-row' key={item.id}>
+              <Link className='table-row' key={item.id} to={"/" + item.slug}>
                 <div className='table-column'>{item.name.fa}</div>
-                <div className='table-column'>{item.price.open} {item.quote_currency.symbol.fa}</div>
-              </div>
+                <div className='table-column'>{item.marketInfo.open} {item.quote_currency.symbol.fa}</div>
+              </Link>
             )
           })
         }

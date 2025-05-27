@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
         Component: List,
       },
       {
-        path: 'chat',
+        path: '/:slug',
         Component: Detail,
       }
     ],
