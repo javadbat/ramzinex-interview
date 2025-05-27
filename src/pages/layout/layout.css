@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer base{
+  #Layout,#root,html,body{
+    @apply bg-white w-dvw h-dvh m-0 p-0;
+    font-family: iran-yekan;
+  }
+}
+
+@font-face {
+  font-family: iran-yekan;
+  src: url('/font/iran-yekan/IRANYekanXVF.woff') format("woff"),
+       url('/font/iran-yekan/IRANYekanXVF.woff2') format("woff2");
+}
