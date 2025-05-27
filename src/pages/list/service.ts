@@ -1,4 +1,4 @@
-import type { CurrencyPair, MarketData } from "./types";
+import type { CurrencyPair, PriceData, PriceInfo } from "./types";
 
 
 export async function  getPairData():Promise<CurrencyPair[]>{
@@ -13,17 +13,14 @@ export async function  getPairData():Promise<CurrencyPair[]>{
   return []
 }
 
-export async function  getPriceData():Promise<Map<number,MarketData>>{
+export async function  getPriceData():Promise<PriceData>{
   try{
     const res = await fetch('https://publicapi.ramzinex.com/exchange/api/v1.0/exchange/chart/statistics-24');
     const data = await res.json();
-    const marketData = new Map<number,MarketData>();
-    Object.keys(data.data).map((key)=>{
-      marketData.set(Number(key),data.data[key])
-    })
-    return marketData;
+    const priceData = data.data;
+    return priceData;
   }catch(e){
     console.error("Error fetching pair data:", e);
   }
-  return new Map();
+  return {};
 }

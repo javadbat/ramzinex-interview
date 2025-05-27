@@ -29,7 +29,8 @@ export type  CurrencyPair ={
     crypto_box: number;
 }
 
-export type MarketData = {
+
+export type PriceInfo = {
     open: number,
     close: number,
     highest: number,
@@ -37,4 +38,7 @@ export type MarketData = {
     baseVolume: number,
     quoteVolume:number,
     changePercent: number
+}
+export type PriceData = {
+    [key:number]: PriceInfo
 }

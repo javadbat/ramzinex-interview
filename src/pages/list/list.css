@@ -3,44 +3,4 @@
 .list {
   @apply h-dvh w-dvw grid;
   grid-template-rows: 2.5rem 1fr;
-
-  .header {
-    @apply h-10 mb-0.5;
-    background: red;
-  }
-
-  .table {
-    @apply h-full w-full grid;
-    grid-template-rows: 2.5rem 1fr;
-    grid-template-columns: 1fr 1fr;
-    background-color: blue;
-
-    .table-header {
-      @apply h-10 mb-0.5 grid;
-      grid-template-columns: subgrid;
-      grid-column: span 2;
-
-      .header-item {
-        border: 1px solid #000;
-      }
-    }
-
-    .table-content {
-      @apply grid;
-      grid-template-columns: subgrid;
-      grid-column: span 2;
-      background-color: green;
-      grid-auto-rows: max-content;
-      align-items: start;
-
-      .table-row {
-        @apply grid border-b-1 border-b-gray-500;
-        grid-template-columns: subgrid;
-        grid-column: span 2;
-        .table-column {
-          background-color: #fff;
-        }
-      }
-    }
-  }
 }
